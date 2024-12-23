@@ -1,0 +1,117 @@
+<div class="search">
+    <div class="searchtest">Weather in your city</div>
+    <div class="btninput">
+      <input [(ngModel)]="city" placeholder="city" class="input">
+      <button class="btnsearch" (click)="onCityEnter()"> Search</button>
+      @if(loading){
+        <img src="load-loading.gif" alt="" class="linmg">
+      }
+    
+    </div>
+  </div>
+  
+  @if(weatherData.length!=0){ 
+  <div >
+    <div class="container text-center">
+      <div class="weathertable">
+
+        @for (w of weatherData; track w.id) {
+            
+        <div  class="weathercard">
+  
+  
+  
+            <div class=" card">
+    
+                <div>
+              <h2>Date:{{w.date}} </h2>
+              <h3>Temperature <img src="thermometer-temperature-svgrepo-com.svg" class="icon"></h3>
+        
+            </div>
+        
+              <div class="sky">
+                <div class="sun"></div>
+                <div class="cloud">
+                  <div class="circle-small"></div>
+                  <div class="circle-tall"></div>
+                  <div class="circle-medium"></div>
+                </div>
+              </div>
+              <div ><h1 class="p3">{{w.temp}}°</h1></div>
+    
+
+              
+              <div class="flex-d">
+                <div class="space">
+                  <div ><h3>Min </h3></div>
+                  <div ><h3>{{w.temp_min}} </h3> </div>
+                </div>
+              
+      
+                <div >
+                  <div ><h3>Max</h3></div>
+                  <div ><h3>{{w.temp_max}}</h3> </div>
+                </div>
+            </div>
+              
+
+    
+              <div class="flex-d">
+              <div class="flex-d">
+                <div ><h3>Pressure</h3></div>
+                <div ><h3>{{w.pressure}} </h3> </div>
+              </div>
+    
+              <div class="flex-d">
+                <div ><h3>Humidity</h3></div>
+                <div ><h3>{{w.humidity}}</h3> </div>
+              </div>
+            </div>
+    
+    
+            </div>
+    
+    
+    
+          </div>
+          }
+
+        <!-- <div *ngFor="let w of weatherData">
+  
+          <div>
+            <div class="date"> Date:{{w.date}}</div>
+            <div class="gary border-b p10"> Temperature : {{w.temp}}</div>
+            <div class="gary sidebyside">
+              <div class="p10 order-r">Min</div>
+              <div class="p10">Max</div>
+            </div>
+  
+            <div class="sidebyside">
+              <div class="border-r p10">{{w.temp_min}}</div>
+              <div class="p10">{{w.temp_max}}</div>
+            </div>
+            <div class="sidebyside">
+              <div class="border-r p10">Pressure</div>
+              <div class="p10">{{w.pressure}} </div>
+            </div>
+            <div class="sidebyside">
+              <div class="border-r p10">Humidity</div>
+              <div class="p10">{{w.humidity}}</div>
+            </div>
+  
+          </div>
+  
+  
+        </div>
+  
+   -->
+
+  
+  
+  
+      </div>
+  
+    </div>
+  
+  </div>
+} 

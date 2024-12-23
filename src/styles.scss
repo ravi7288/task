@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --cms-header-font-size: 14px;
+    --cms-font-size: 12px;
+    --cms-icon-font-size: 18px;
+
+
+    --cms-font-family: verdana, Tahoma, Arial;
+}
+
+html,
+body {
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+}
